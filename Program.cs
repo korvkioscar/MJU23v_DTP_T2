@@ -47,21 +47,12 @@ namespace MJU23v_DTP_T2
         static void Main(string[] args)
         {
             // 2. We change names and method variable names.
-            string filename = @"..\..\..\links\links.lis";
-            using (StreamReader sr = new StreamReader(filename))
-            {
-                int i = 0;
-                string line = sr.ReadLine();
-                while (line != null)
-                {
-                    Console.WriteLine(line);
-                    Link L = new Link(line);
-                    L.Print(i++);
-                    links.Add(L);
-                    line = sr.ReadLine();
-                }
-            }
+            string filepath = @"..\..\..\links\links.lis";
+
+            //We commit a break out static method.
+
             Console.WriteLine("Välkommen till länklistan! Skriv 'hjälp' för hjälp!");
+            
             do
             {
                 Console.Write("> ");
