@@ -62,8 +62,7 @@ namespace MJU23v_DTP_T2
                 // 5. I'll implement a switch here instead.
                 switch (command)
                 {
-                    Console.WriteLine("hjälp           - skriv ut den här hjälpen");
-                    Console.WriteLine("sluta           - avsluta programmet");
+
                 }
                 else if (command == "ladda")
                 {
@@ -85,7 +84,8 @@ namespace MJU23v_DTP_T2
                         }
                     }
                 }
-                else if (command == "lista")
+                // 6. Usually having problems with curly braces so I'll put the curly braces here before I'll start working on the switch.
+                while (true) ;
                 {
                     int i = 0;
                     foreach (Link L in links)
