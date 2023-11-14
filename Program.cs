@@ -38,7 +38,7 @@ namespace MJU23v_DTP_T2
                 application.StartInfo.FileName = link;
                 application.Start();
             }
-            //. We need to override the ToString implementation.
+            //. 1 We need to override the ToString implementation.
             public string ToFormattedString()
             {
                 return $"{category}|{group}|{name}|{descr}|{link}";
@@ -48,9 +48,9 @@ namespace MJU23v_DTP_T2
         {
             // 2. We change names and method variable names.
             string filepath = @"..\..\..\links\links.lis";
-
-            //We commit a break out static method.
-
+            // 4. We implement a ReadLinksFromFile to start with.
+            ReadLinksFromFile(filepath);
+            // 3. We commit a break out static method.
             Console.WriteLine("Välkommen till länklistan! Skriv 'hjälp' för hjälp!");
             
             do
