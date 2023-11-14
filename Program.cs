@@ -78,7 +78,7 @@ namespace MJU23v_DTP_T2
                         break;
                     // 9. Case Ladda
                     case "ladda":
-                        LoadLinks(arg);
+                        LoadLinks(arg, ref filepath);
                         break;
                     // 10. Case Lista
                     case "lista":
@@ -131,9 +131,9 @@ namespace MJU23v_DTP_T2
             // 19. Created a static void to load links.
 
             //FIXME "Something about the filepath here is wrong. 
-            static void LoadLinks(string[] arg)
+            static void LoadLinks(string[] arg, ref string loadFilePath)
+            //FIX ME The LoadLinks(Arg) needed to add ref filepath because it's an returing reference.
             {
-                string loadFilePath = filepath;
                 if (arg.Length == 2)
                 {
                     loadFilePath = $@"..\..\..\links\{arg[1]}";
