@@ -150,10 +150,16 @@ namespace MJU23v_DTP_T2
             }
             // 20. We no longer need the if else:s.
             // 22. We create a static void that Prints help.
+            // 
             static void PrintHelp()
+            // 27. Now we need to make the print help actually help the user.
             {
-                Console.WriteLine("Hjälp            - skriv ut den här hjälpen");
-                Console.WriteLine("sluta            - avsluta programmet");
+                Console.WriteLine("sluta = Avslutar programmet ");
+                Console.WriteLine("ladda = Laddar länkar från en fil");
+                Console.WriteLine("lista = Visa alla länkarna");
+                Console.WriteLine("ny = Lägg till en ny länk");
+                Console.WriteLine("spara = Spara länkar till en fil");
+                Console.WriteLine("ta = öppna länken med numret");
             }
             // 23. We create a static void that creates new links
             static void CreateNewLink()
