@@ -1,7 +1,5 @@
 ﻿using System.Diagnostics;
-using System.IO.Enumeration;
-using System.Net.Http.Headers;
-using System.Xml.Linq;
+//Removed System IO, Net and Xml. They are not used in the code.
 
 namespace MJU23v_DTP_T2
 {
