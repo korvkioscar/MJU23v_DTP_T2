@@ -173,7 +173,20 @@ namespace MJU23v_DTP_T2
 
                 Console.WriteLine("Länken har lagts till.");
            }
-
+            // Created a static void that saves links
+            static void SaveLinks(string[] arg) 
+            {
+                string saveFilePath = (arg.Length == 2) ? $@"..\..\..\links\{arg[1]}" : @"..\..\..\links\savedLinks.lis";
+                using (StreamWriter sw = new StreamWriter(saveFilePath)) 
+                {
+                    foreach (Link L in links) 
+                    {
+                        sw.WriteLine(L.ToString());
+                    }
+                }
+                Console.WriteLine("Länkarna har sparats");
+            }
+            //
         }
     }
 } 
