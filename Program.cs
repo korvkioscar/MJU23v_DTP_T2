@@ -95,12 +95,10 @@ namespace MJU23v_DTP_T2
                         OpenLink(arg);
                         break;
 
-
-
-
-
-
-
+                    // 15. We create the default if the command is unknown.
+                    default:
+                        Console.WriteLine($"Okänt kommando: '{command}'");
+                        break;
                 }
 
              }
