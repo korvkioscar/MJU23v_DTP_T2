@@ -82,6 +82,10 @@ namespace MJU23v_DTP_T2
                     case "ny":
                         CreateNewLink();
                         break;
+                    // 12. Case Spara
+                    case "spara":
+                        SaveLinks(arg);
+                        break;
 
 
 
