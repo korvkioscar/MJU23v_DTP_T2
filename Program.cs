@@ -9,6 +9,8 @@ namespace MJU23v_DTP_T2
     internal class Program
     {
         static List<Link> links = new List<Link>();
+        //FIXME Creating a static string made on error out of two disappear.
+        static string filepath = @"..\..\..\links\links.lis";
         class Link
         {
             public string category, group, name, descr, link;
@@ -134,7 +136,7 @@ namespace MJU23v_DTP_T2
                 string loadFilePath = filepath;
                 if (arg.Length == 2)
                 {
-                    filepath = $@"..\..\..\links\{arg[1]}";
+                    loadFilePath = $@"..\..\..\links\{arg[1]}";
                 }
                 links = new List<Link>();
                 ReadLinksFromFile(loadFilePath);
