@@ -62,28 +62,16 @@ namespace MJU23v_DTP_T2
                 // 5. I'll implement a switch here instead.
                 switch (command)
                 {
+                    // 7. Case Sluta
+                    case "sluta":
+                        Console.WriteLine("Hej då! Välkommen åter");
+                        break;
+
+
 
                 }
-                else if (command == "ladda")
-                {
-                    if (arg.Length == 2)
-                    {
-                        filename = $@"..\..\..\links\{arg[1]}";
-                    }
-                    links = new List<Link>();
-                    using (StreamReader sr = new StreamReader(filename))
-                    {
-                        int i = 0;
-                        string line = sr.ReadLine();
-                        while (line != null)
-                        {
-                            Console.WriteLine(line);
-                            Link L = new Link(line);
-                            links.Add(L);
-                            line = sr.ReadLine();
-                        }
-                    }
-                }
+
+             }
                 // 6. Usually having problems with curly braces so I'll put the curly braces here before I'll start working on the switch.
                 while (true) ;
                 {
