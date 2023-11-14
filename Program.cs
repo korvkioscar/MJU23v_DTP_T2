@@ -123,49 +123,14 @@ namespace MJU23v_DTP_T2
                 }
             }
             // 18. Since we've already implemented a switch we don't need the else if.
-                else if (command == "spara")
+            // 19. Created a static void to load links.
+            static void LoadLinks(string[] arg) 
+            {
+                if (arg.Length == 2) 
                 {
-                    if (arg.Length == 2)
-                    {
-                        filename = $@"..\..\..\links\{arg[1]}";
-                    }
-                    using (StreamWriter sr = new StreamWriter(filename))
-                    {
-                        foreach(Link L in links)
-                        {
-                            sr.WriteLine(L.ToString());
-                        }
-                    }
+                    filePath = $@"..\..\..\links\{arg[1]}";
                 }
-                else if (command == "ta")
-                {
-                    if (arg[1] == "bort")
-                    {
-                        links.RemoveAt(Int32.Parse(arg[2]));
-                    }
-                }
-                else if (command == "öppna")
-                {
-                    if (arg[1] == "grupp")
-                    {
-                        foreach (Link L in links)
-                        {
-                            if (L.group == arg[2])
-                            {
-                                L.OpenLink();
-                            }
-                        }
-                    }
-                    else if (arg[1] == "länk")
-                    {
-                        int ix = Int32.Parse(arg[2]);
-                        links[ix].OpenLink();
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Okänt kommando: '{command}'");
-                }
-            } 
-        }
-    }
+                links = new List<Link>();
+                ReadLinksFromFile(filePath);
+            }
+            // 20. We no longer need the if else:s.
