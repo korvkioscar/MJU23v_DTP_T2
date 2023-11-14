@@ -1,5 +1,8 @@
 ﻿using System.Diagnostics;
-//Removed System IO, Net and Xml. They are not used in the code.
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+//Added these again since I became uncertain.
 
 namespace MJU23v_DTP_T2
 {
@@ -141,9 +144,11 @@ namespace MJU23v_DTP_T2
                     L.Print(i++);
             }
             // 20. We no longer need the if else:s.
-            // 22. We creat a static void that Prints help.
+            // 22. We create a static void that Prints help.
             static void PrintHelp()
             {
-
+                Console.WriteLine("Hjälp            - skriv ut den här hjälpen");
+                Console.WriteLine("sluta            - avsluta programmet");
             }
+        }
 
