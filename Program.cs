@@ -106,8 +106,15 @@ namespace MJU23v_DTP_T2
             }
                 // 6. Usually having problems with curly braces so I'll put the curly braces here before I'll start working on the switch.
                 while (true) ;
-            // We create a static void to make the ReadLinksFromFile work.
+            // 16. We create a static void to make the ReadLinksFromFile work.
             static void ReadLinksFromFile(string filepath)
+            {
+                // 17. Creating streamreader which is a textreader.
+                using (StreamReader sr = new StreamReader(filepath))
+                {
+
+                }
+            }
                 {
                     int i = 0;
                     foreach (Link L in links)
