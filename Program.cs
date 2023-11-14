@@ -102,8 +102,8 @@ namespace MJU23v_DTP_T2
                         break;
                 }
             }
-                // 6. Usually having problems with curly braces so I'll put the curly braces here before I'll start working on the switch.
-                while (true);
+            // 6. Usually having problems with curly braces so I'll put the curly braces here before I'll start working on the switch.
+            while (true);
             // 16. We create a static void to make the ReadLinksFromFile work.
             static void ReadLinksFromFile(string filePath)
             {
@@ -112,7 +112,7 @@ namespace MJU23v_DTP_T2
                 {
                     int i = 0;
                     string line = sr.ReadLine();
-                    while (line!= null)
+                    while (line != null)
                     {
                         Console.WriteLine(line);
                         Link L = new Link(line);
@@ -124,13 +124,19 @@ namespace MJU23v_DTP_T2
             }
             // 18. Since we've already implemented a switch we don't need the else if.
             // 19. Created a static void to load links.
-            static void LoadLinks(string[] arg) 
+            static void LoadLinks(string[] arg)
             {
-                if (arg.Length == 2) 
+                if (arg.Length == 2)
                 {
                     filePath = $@"..\..\..\links\{arg[1]}";
                 }
                 links = new List<Link>();
                 ReadLinksFromFile(filePath);
             }
+            // 21. Created a static void that print the links.
+            static void PrintLinks()
+            {
+
+            }
             // 20. We no longer need the if else:s.
+
