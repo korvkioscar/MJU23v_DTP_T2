@@ -42,7 +42,7 @@ namespace MJU23v_DTP_T2
                 application.Start();
             }
             //. 1 We need to override the ToString implementation.
-            public string ToFormattedString()
+            public override string ToString()
             {
                 return $"{category}|{group}|{name}|{descr}|{link}";
             }
@@ -52,7 +52,7 @@ namespace MJU23v_DTP_T2
             // 2. We change names and method variable names.
             string filepath = @"..\..\..\links\links.lis";
             // 4. We implement a ReadLinksFromFile to start with.
-            ReadLinksFromFile(filePath);
+            ReadLinksFromFile(filepath);
             // 3. We commit a break out static method.
             Console.WriteLine("Välkommen till länklistan! Skriv 'hjälp' för hjälp!");
 
@@ -108,10 +108,10 @@ namespace MJU23v_DTP_T2
             // 6. Usually having problems with curly braces so I'll put the curly braces here before I'll start working on the switch.
             while (true);
             // 16. We create a static void to make the ReadLinksFromFile work.
-            static void ReadLinksFromFile(string filePath)
+            static void ReadLinksFromFile(string filepath)
             {
                 // 17. Creating streamreader which is a textreader.
-                using (StreamReader sr = new StreamReader(filePath))
+                using (StreamReader sr = new StreamReader(filepath))
                 {
                     int i = 0;
                     string line = sr.ReadLine();
@@ -131,10 +131,10 @@ namespace MJU23v_DTP_T2
             {
                 if (arg.Length == 2)
                 {
-                    filePath = $@"..\..\..\links\{arg[1]}";
+                    filepath = $@"..\..\..\links\{arg[1]}";
                 }
                 links = new List<Link>();
-                ReadLinksFromFile(filePath);
+                ReadLinksFromFile(filepath);
             }
             // 21. Created a static void that print the links.
             static void PrintLinks()
@@ -150,5 +150,31 @@ namespace MJU23v_DTP_T2
                 Console.WriteLine("Hjälp            - skriv ut den här hjälpen");
                 Console.WriteLine("sluta            - avsluta programmet");
             }
+            // 23. We create a static void that creates new links
+            static void CreateNewLink() 
+           {
+                Console.Write("Ange Kategori: ");
+                string category = Console.ReadLine();
+
+                Console.Write("Ange grupp: ");
+                string group = Console.ReadLine();
+
+                Console.Write("Ange namn: ");
+                string name = Console.ReadLine();
+
+                Console.Write("Ange beskrivning: ");
+                string descr = Console.ReadLine();
+
+                Console.Write("Ange länk ");
+                string link = Console.ReadLine();
+
+                Link newLink = new Link(category, group, name, descr, link);
+                links.Add(newLink);
+
+                Console.WriteLine("Länken har lagts till.");
+           }
+
         }
+    }
+} 
 
