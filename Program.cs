@@ -173,7 +173,7 @@ namespace MJU23v_DTP_T2
 
                 Console.WriteLine("Länken har lagts till.");
            }
-            // Created a static void that saves links
+            // 24. Created a static void that saves links
             static void SaveLinks(string[] arg) 
             {
                 string saveFilePath = (arg.Length == 2) ? $@"..\..\..\links\{arg[1]}" : @"..\..\..\links\savedLinks.lis";
@@ -186,7 +186,27 @@ namespace MJU23v_DTP_T2
                 }
                 Console.WriteLine("Länkarna har sparats");
             }
-            //
+            // 25. Created a static void that removes links.
+            static void RemoveLink(string[] arg)
+            {
+                if (arg.Length != 2)
+                {
+                    Console.WriteLine("Felaktigt argument för att ta kommandot");
+                    return;
+                }
+
+                int linkIndex;
+                if (int.TryParse(arg[1], out linkIndex) && linkIndex >= 0 && linkIndex < links.Count) 
+                {
+                    links.RemoveAt(linkIndex);
+                    Console.WriteLine($"Länk {linkIndex} har tagits bort.");
+                }
+                else
+                {
+                   Console.WriteLine($"Ogiligt länknummer: {arg[1]}");
+                }
+            }
+            // 26. Created a static void that opens links.
         }
     }
 } 
