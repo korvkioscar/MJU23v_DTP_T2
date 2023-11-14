@@ -86,6 +86,11 @@ namespace MJU23v_DTP_T2
                     case "spara":
                         SaveLinks(arg);
                         break;
+                    // 13. Case Ta
+                    case "ta":
+                        OpenLink(arg);
+                        break;
+
 
 
 
