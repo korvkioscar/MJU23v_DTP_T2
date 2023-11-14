@@ -37,7 +37,6 @@ namespace MJU23v_DTP_T2
                 application.StartInfo.UseShellExecute = true;
                 application.StartInfo.FileName = link;
                 application.Start();
-                // application.WaitForExit();
             }
             //. We need to override the ToString implementation.
             public string ToFormattedString()
