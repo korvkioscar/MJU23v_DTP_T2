@@ -66,6 +66,11 @@ namespace MJU23v_DTP_T2
                     case "sluta":
                         Console.WriteLine("Hej då! Välkommen åter");
                         break;
+                    // 8. Case Hjälp
+                    case "hjälp":
+                        PrintHelp();
+                        break;
+
 
 
 
