@@ -72,9 +72,7 @@ namespace MJU23v_DTP_T2
                 string[] arg = cmd.Split();
                 string command = arg[0];
                 //Remove code duplication
-                {
-                    Console.WriteLine("Hej då! Välkommen åter!");
-                }
+
                 else if (command == "hjälp")
                 {
                     Console.WriteLine("hjälp           - skriv ut den här hjälpen");
