@@ -74,6 +74,10 @@ namespace MJU23v_DTP_T2
                     case "ladda":
                         LoadLinks(arg);
                         break;
+                    // 10. Case Lista.
+                    case "lista":
+                        PrintLinks();
+                        break;
 
 
 
