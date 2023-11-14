@@ -50,7 +50,7 @@ namespace MJU23v_DTP_T2
         static void Main(string[] args)
         {
             // 2. We change names and method variable names.
-            string filePath = @"..\..\..\links\links.lis";
+            string filename = @"..\..\..\links\links.lis";
             using (StreamReader sr = new StreamReader(filename))
             {
                 int i = 0;
@@ -71,7 +71,7 @@ namespace MJU23v_DTP_T2
                 string cmd = Console.ReadLine().Trim();
                 string[] arg = cmd.Split();
                 string command = arg[0];
-                if (command == "sluta")
+                //Remove code duplication
                 {
                     Console.WriteLine("Hej då! Välkommen åter!");
                 }
