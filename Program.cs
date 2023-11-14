@@ -136,7 +136,14 @@ namespace MJU23v_DTP_T2
             // 21. Created a static void that print the links.
             static void PrintLinks()
             {
-
+                int i = 0;
+                foreach (Link L in links)
+                    L.Print(i++);
             }
             // 20. We no longer need the if else:s.
+            // 22. We creat a static void that Prints help.
+            static void PrintHelp()
+            {
+
+            }
 
