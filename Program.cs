@@ -59,9 +59,8 @@ namespace MJU23v_DTP_T2
                 string cmd = Console.ReadLine().Trim();
                 string[] arg = cmd.Split();
                 string command = arg[0];
-                //Remove code duplication
-
-                else if (command == "hjälp")
+                // 5. I'll implement a switch here instead.
+                switch (command)
                 {
                     Console.WriteLine("hjälp           - skriv ut den här hjälpen");
                     Console.WriteLine("sluta           - avsluta programmet");
