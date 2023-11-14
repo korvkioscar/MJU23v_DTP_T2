@@ -49,7 +49,7 @@ namespace MJU23v_DTP_T2
             // 2. We change names and method variable names.
             string filepath = @"..\..\..\links\links.lis";
             // 4. We implement a ReadLinksFromFile to start with.
-            ReadLinksFromFile(filepath);
+            ReadLinksFromFile(filePath);
             // 3. We commit a break out static method.
             Console.WriteLine("Välkommen till länklistan! Skriv 'hjälp' för hjälp!");
 
@@ -100,42 +100,29 @@ namespace MJU23v_DTP_T2
                     default:
                         Console.WriteLine($"Okänt kommando: '{command}'");
                         break;
-
                 }
-
             }
                 // 6. Usually having problems with curly braces so I'll put the curly braces here before I'll start working on the switch.
-                while (true) ;
+                while (true);
             // 16. We create a static void to make the ReadLinksFromFile work.
-            static void ReadLinksFromFile(string filepath)
+            static void ReadLinksFromFile(string filePath)
             {
                 // 17. Creating streamreader which is a textreader.
-                using (StreamReader sr = new StreamReader(filepath))
-                {
-
-                }
-            }
+                using (StreamReader sr = new StreamReader(filePath))
                 {
                     int i = 0;
-                    foreach (Link L in links)
+                    string line = sr.ReadLine();
+                    while (line!= null)
+                    {
+                        Console.WriteLine(line);
+                        Link L = new Link(line);
                         L.Print(i++);
+                        links.Add(L);
+                        line = sr.ReadLine();
+                    }
                 }
-                else if (command == "ny")
-                {
-                    Console.WriteLine("Skapa en ny länk:");
-                    Console.Write("  ange kategori: ");
-                    string category = Console.ReadLine();
-                    Console.Write("  ange grupp: ");
-                    string group = Console.ReadLine();
-                    Console.Write("  ange namn: ");
-                    string name = Console.ReadLine();
-                    Console.Write("  ange beskrivning: ");
-                    string descr = Console.ReadLine();
-                    Console.Write("  ange länk: ");
-                    string link = Console.ReadLine();
-                    Link newLink = new Link(category, group, name, descr, link);
-                    links.Add(newLink);
-                }
+            }
+            // 18. Since we've already implemented a switch we don't need the else if.
                 else if (command == "spara")
                 {
                     if (arg.Length == 2)
@@ -179,6 +166,6 @@ namespace MJU23v_DTP_T2
                 {
                     Console.WriteLine("Okänt kommando: '{command}'");
                 }
-            } while (true);
+            } 
         }
     }
