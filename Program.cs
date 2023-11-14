@@ -70,6 +70,10 @@ namespace MJU23v_DTP_T2
                     case "hjälp":
                         PrintHelp();
                         break;
+                    // 9. Case Ladda
+                    case "ladda":
+                        LoadLinks(arg);
+                        break;
 
 
 
