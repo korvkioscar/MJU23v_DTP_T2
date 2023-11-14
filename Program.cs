@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using System.Collections.Generic;
+﻿
 using System.Diagnostics;
+using System.Collections.Generic;
 using System.IO;
 //Added these again since I became uncertain.
 
@@ -127,14 +127,17 @@ namespace MJU23v_DTP_T2
             }
             // 18. Since we've already implemented a switch we don't need the else if.
             // 19. Created a static void to load links.
+
+            //FIXME "Something about the filepath here is wrong. 
             static void LoadLinks(string[] arg)
             {
+                string loadFilePath = filepath;
                 if (arg.Length == 2)
                 {
                     filepath = $@"..\..\..\links\{arg[1]}";
                 }
                 links = new List<Link>();
-                ReadLinksFromFile(filepath);
+                ReadLinksFromFile(loadFilePath);
             }
             // 21. Created a static void that print the links.
             static void PrintLinks()
@@ -151,8 +154,8 @@ namespace MJU23v_DTP_T2
                 Console.WriteLine("sluta            - avsluta programmet");
             }
             // 23. We create a static void that creates new links
-            static void CreateNewLink() 
-           {
+            static void CreateNewLink()
+            {
                 Console.Write("Ange Kategori: ");
                 string category = Console.ReadLine();
 
@@ -172,14 +175,14 @@ namespace MJU23v_DTP_T2
                 links.Add(newLink);
 
                 Console.WriteLine("Länken har lagts till.");
-           }
+            }
             // 24. Created a static void that saves links
-            static void SaveLinks(string[] arg) 
+            static void SaveLinks(string[] arg)
             {
                 string saveFilePath = (arg.Length == 2) ? $@"..\..\..\links\{arg[1]}" : @"..\..\..\links\savedLinks.lis";
-                using (StreamWriter sw = new StreamWriter(saveFilePath)) 
+                using (StreamWriter sw = new StreamWriter(saveFilePath))
                 {
-                    foreach (Link L in links) 
+                    foreach (Link L in links)
                     {
                         sw.WriteLine(L.ToString());
                     }
@@ -196,18 +199,37 @@ namespace MJU23v_DTP_T2
                 }
 
                 int linkIndex;
-                if (int.TryParse(arg[1], out linkIndex) && linkIndex >= 0 && linkIndex < links.Count) 
+                if (int.TryParse(arg[1], out linkIndex) && linkIndex >= 0 && linkIndex < links.Count)
                 {
                     links.RemoveAt(linkIndex);
                     Console.WriteLine($"Länk {linkIndex} har tagits bort.");
                 }
                 else
                 {
-                   Console.WriteLine($"Ogiligt länknummer: {arg[1]}");
+                    Console.WriteLine($"Ogiligt länknummer: {arg[1]}");
                 }
             }
             // 26. Created a static void that opens links.
+            static void OpenLink(string[] args)
+            {
+                if (args.Length != 2)
+                {
+                    Console.WriteLine("Felaktigt argument för att öppna kommandot.");
+                    return;
+                }
+
+                int linkIndex;
+                if (int.TryParse(args[1], out linkIndex) && (linkIndex >= 0 && linkIndex < links.Count))
+                {
+                    Link selectedLink = links[linkIndex];
+                    selectedLink.OpenLink();
+                }
+                else
+                {
+                    Console.WriteLine($"Ogiltigt länknummer: {args[1]}");
+                }
+            }
         }
     }
-} 
+}
 
