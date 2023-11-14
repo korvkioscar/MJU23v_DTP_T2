@@ -41,14 +41,16 @@ namespace MJU23v_DTP_T2
                 application.Start();
                 // application.WaitForExit();
             }
-            public string ToString()
+            //. We need to override the ToString implementation.
+            public string ToFormattedString()
             {
                 return $"{category}|{group}|{name}|{descr}|{link}";
             }
         }
         static void Main(string[] args)
         {
-            string filename = @"..\..\..\links\links.lis";
+            // 2. We change names and method variable names.
+            string filePath = @"..\..\..\links\links.lis";
             using (StreamReader sr = new StreamReader(filename))
             {
                 int i = 0;
