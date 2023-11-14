@@ -90,6 +90,11 @@ namespace MJU23v_DTP_T2
                     case "ta":
                         OpenLink(arg);
                         break;
+                    // 14. Case Öppna
+                    case "öppna":
+                        OpenLink(arg);
+                        break;
+
 
 
 
